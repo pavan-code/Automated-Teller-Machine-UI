@@ -87,7 +87,7 @@ function oka() {
         location.href = "new pass.html";
     }
     else {
-        $("#message").html("Password didn't match");
+        $("#message").html("Incorrect PIN");
         $(".pop-up").css("display", "block");
         setTimeout(() => {
             $(".pop-up").css("display", "none");
@@ -99,7 +99,7 @@ var newpass = ''
 function okay() {
     newpass = document.getElementById("pin").innerHTML
     key = newpass
-    $("#message").html("Password updated successully!")
+    $("#message").html("PIN updated successully!")
     $(".pop-up").css("display", "block")
 //     $("#close").attr("href", "final1.html")
     setTimeout(() => {
