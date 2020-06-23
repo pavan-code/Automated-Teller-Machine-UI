@@ -89,6 +89,9 @@ function oka() {
     else {
         $("#message").html("Password didn't match");
         $(".pop-up").css("display", "block");
+        setTimeout(() => {
+            $(".pop-up").css("display", "none");
+        }, 2000);
 
     }
 }
@@ -98,7 +101,11 @@ function okay() {
     key = newpass
     $("#message").html("Password updated successully!")
     $(".pop-up").css("display", "block")
-    $("#close").attr("href", "final1.html")
+//     $("#close").attr("href", "final1.html")
+    setTimeout(() => {
+        $(".pop-up").css("display", "close");
+        location.href = "final1.html";
+    }, 2000);
 }
 function showbalance() {
     $("#message").html("Available balance in your account is " + balance)
