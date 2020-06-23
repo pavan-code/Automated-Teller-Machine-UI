@@ -32,13 +32,21 @@ function calc() {
     if (document.getElementById("amount").innerHTML % 100 == 0) {
         $("#message").html('Your transaction is being processsed, Please wait')
         $(".pop-up").css("display", "block");
-        $("#close").attr("href", "final.html")
+        // $("#close").attr("href", "final.html")
         balance -= amount
+        setTimeout(() => {
+            $(".pop-up").css("display", "none");
+            location.href = "final.html"
+        }, 2500);
     }
     else {
         $("#message").html('Enter denominations in multiples of ₹100')
         $(".pop-up").css("display", "block")
-        $("#close").attr("href", "savings.html")
+        setTimeout(() => {
+            $(".pop-up").css("display", "none");
+            document.getElementById("amount").innerHTML= "";
+        }, 2500);
+        // $("#close").attr("href", "savings.html")
     }
 }
 function funct(n) {
@@ -52,13 +60,27 @@ function calcu() {
         $("#close").attr("href", "final.html")
         balance = balance + amount
 
+        setTimeout(() => {
+            // $("#message").html('Your transaction is being processsed, Please wait')
+            $(".pop-up").css("display", "none");
+            // $("#close").attr("href", "final.html")
+            // balance = balance + amount
+            location.href = "final.html"
+
+        }, 2500);
+
     }
     else {
         $("#message").html('Enter denominations in multiples of ₹100')
         $(".pop-up").css("display", "block")
         $("#close").attr("href", "deposit.html")
+        setTimeout(() => {
+            $(".pop-up").css("display", "none")
+            document.getElementById("amount").innerHTML = "";
+        }, 2500);
     }
 }
+
 
 function oka() {
     if (old == key) {
